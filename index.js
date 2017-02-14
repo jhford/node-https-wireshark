@@ -23,7 +23,9 @@ function patchRequest(req) {
       var key = session.masterKey;
       var logline = 'RSA Session-ID:' + id + 'Master-Key:' + key + '\n';
       var logfile = process.env.SSLKEYLOGFILE;
-
+      if (!logfile) {
+        console.log('Missing Environment Variable SSLKEYLOGFILE');
+      }
       fs.appendFileSync(logfile, logline);
     });
   });
