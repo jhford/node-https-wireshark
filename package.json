@@ -1,0 +1,11 @@
+{
+  "name": "node-https-wireshark",
+  "version": "1.0.0",
+  "description": "Wrap the node.js https request method to log ssl keys",
+  "main": "index.js",
+  "scripts": {
+    "test": "false"
+  },
+  "author": "John Ford <john@johnford.org>",
+  "license": "MPL-2.0"
+}
