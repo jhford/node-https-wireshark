@@ -22,7 +22,7 @@ function patchRequest(req) {
       // session.sessionId and session.masterKey should be hex strings
       var id = session.sessionId;
       var key = session.masterKey;
-      var logline = "RSA Session-ID:" + id + "Master-Key:" + key + "\n";
+      var logline = "RSA Session-ID:" + id + " Master-Key:" + key + "\n";
       var logfile = process.env.SSLKEYLOGFILE;
       if (!logfile) {
         console.log("Missing Environment Variable SSLKEYLOGFILE");
