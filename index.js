@@ -32,9 +32,9 @@ function patchRequest(req) {
 }
 
 function patchHttpsModule (https) {
-  var _https = https;
+  var _httpsrequest = https.request;
   https.request = function request(options, callback) {
-    var req = _https.request(options, callback);
+    var req = _httpsrequest(options, callback);
     patchRequest(req);
     return req;
   }
