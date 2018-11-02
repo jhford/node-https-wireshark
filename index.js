@@ -31,10 +31,10 @@ function patchRequest(req) {
   });
 }
 
-function patchHttpModule (https) {
+function patchHttpsModule (https) {
   var _https = https;
   https.request = function request(options, callback) {
-    var req = _http.request(options, callback);
+    var req = _https.request(options, callback);
     patchRequest(req);
     return req;
   }
@@ -44,5 +44,5 @@ function patchHttpModule (https) {
 module.exports = {
   patchRequest: patchRequest,
   patchHttpModule: patchHttpModule,
-  https: patchHttpModule(require('https')),
+  https: patchHttpsModule(https),
 }
