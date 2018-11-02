@@ -43,6 +43,6 @@ function patchHttpsModule (https) {
 
 module.exports = {
   patchRequest: patchRequest,
-  patchHttpModule: patchHttpModule,
+  patchHttpsModule: patchHttpsModule,
   https: patchHttpsModule(https),
 }
